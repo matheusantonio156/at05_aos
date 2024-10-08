@@ -4,6 +4,8 @@ package com.example.gestao_projetos.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,6 +17,8 @@ public class Mebros {
     @Column(nullable = false)
     private String nome;
     private String funcao;
+    @Enumerated(EnumType.STRING)
+    private StatusMebros statusMebros;
     public Mebros() {  }
 
     public Mebros(String nome, String funcao) {
@@ -37,14 +41,27 @@ public class Mebros {
     public void setNome(String nome) {
         this.nome = nome;
     }
+     
+    public StatusMebros getStatusMebros() {
+        return statusMebros;
+    }
+    public void setStatusMebros(StatusMebros statusMebros) {
+        this.statusMebros = statusMebros;
+    }
+    public String getFuncao() {
+        return funcao;
+    }
 
+    public void setFuncao(String funcao) {
+        this.funcao = funcao;
+    }
 
     @Override
     public String toString() {
-        return "Mebros{" +
-               "id=" + id +
-               ", nome='" + nome + '\'' +
-               ", salario=" + funcao +
+        return "RequisicaoNovoMebros{" +
+               "nome='" + nome + '\'' +
+               ", funcao='" + funcao + '\'' +
+               ", statusMebros=" + statusMebros + // Incluindo o status no toString.
                '}';
     }
     
