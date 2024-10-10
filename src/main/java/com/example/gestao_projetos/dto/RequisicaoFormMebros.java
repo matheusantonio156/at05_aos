@@ -32,7 +32,9 @@ public class RequisicaoFormMebros {
     }
 
 
-
+    public StatusMebros getStatusMebros( ){
+        return statusMebros;
+    }
 
 
     public Mebros toMebros() {

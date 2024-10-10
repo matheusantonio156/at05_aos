@@ -20,15 +20,20 @@ import com.example.gestao_projetos.repository.MebrosRepository;
 import jakarta.validation.Valid;
 
 @Controller
-@RequestMapping(value = "/membros")
+@RequestMapping(value = "/mebros")
 public class MebrosController {
 
     @Autowired
     private MebrosRepository mebrosRepository;
 
+
+    public String handleError() {
+        return "error"; // Um template de erro que você criou.
+    }
     @GetMapping("")
     public ModelAndView index() {
        java.util.List<Mebros> mebros = this.mebrosRepository.findAll();
+       System.err.println("nsnsnjsjshjh");
         ModelAndView mv = new ModelAndView("mebros/index");
         mv.addObject("mebros", mebros);
 
@@ -58,7 +63,7 @@ public class MebrosController {
             Mebros mebros = requisicao.toMebros();
             this.mebrosRepository.save(mebros);
 
-            return new ModelAndView("redirect:/mebros/" + mebros.getId());
+            return new ModelAndView("redirect:/mebros");
         }
     }
 
