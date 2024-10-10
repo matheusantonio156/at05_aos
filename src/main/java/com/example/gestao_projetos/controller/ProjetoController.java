@@ -1,11 +1,11 @@
 package com.example.gestao_projetos.controller;
 
-// import com.example.gestao_projetos.entity.Disciplina;
+import com.example.gestao_projetos.entity.Disciplina;
 import com.example.gestao_projetos.entity.Projeto;
-// import com.example.gestao_projetos.entity.Membro;
-// import com.example.gestao_projetos.service.DisciplinaService;
-// import com.example.gestao_projetos.service.ProjetoService;
-// import com.example.gestao_projetos.service.MembroService;
+import com.example.gestao_projetos.entity.Mebros;
+import com.example.gestao_projetos.service.ProjetoService;
+// import disciplina service
+// import membros service
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/projetos")
+@RequestMapping(value = "/projetos")
 public class ProjetoController {
 
     @Autowired
@@ -59,7 +59,7 @@ public class ProjetoController {
     @GetMapping("/{id}")
     public String detalhesProjeto(@PathVariable Long id, Model model) {
         Projeto projeto = projetoService.getProjetoById(id);
-        List<Membro> membros = membroService.listarMembrosPorProjeto(id);
+        List<Mebros> membros = membroService.listarMembrosPorProjeto(id);
         model.addAttribute("projeto", projeto);
         model.addAttribute("membros", membros);
         return "projetos/detalhes-projeto";

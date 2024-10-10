@@ -49,7 +49,7 @@ public class DisciplinaController {
         return disciplinaRepository.findById(id)
                 .map(disciplina -> {
                     disciplinaRepository.delete(disciplina);
-                    return ResponseEntity.ok().build();
+                    return ResponseEntity.ok().<Void>build();
                 }).orElse(ResponseEntity.notFound().build());
     }
 }

@@ -44,7 +44,7 @@ public class Tarefa {
     
     @ManyToOne
     @JoinColumn(name = "membro_id", nullable = false)
-    private Membro membro;
+    private Mebros membro;
 
     
     @OneToMany(mappedBy = "tarefaPrincipal", cascade = CascadeType.ALL)
@@ -106,11 +106,11 @@ public class Tarefa {
         this.projeto = projeto;
     }
 
-    public Membros getMembro() {
+    public Mebros getMembro() {
         return membro;
     }
 
-    public void setMembro(Membros Membros) {
+    public void setMembro(Mebros Membros) {
         this.membro = membro;
     }
 

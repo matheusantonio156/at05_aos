@@ -1,3 +1,5 @@
+package com.example.gestao_projetos.entity;
+
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -23,7 +25,7 @@ public class Projeto {
         name = "projeto_membro",
         joinColumns = @JoinColumn(name = "projeto_id"),
         inverseJoinColumns = @JoinColumn(name = "membro_id"))
-    private List<Membro> membros;
+    private List<Mebros> membros;
 
     // Construtores
     public Projeto() {
@@ -76,11 +78,11 @@ public class Projeto {
         this.tarefas = tarefas;
     }
 
-    public List<Membro> getMembros() {
+    public List<Mebros> getMembros() {
         return membros;
     }
 
-    public void setMembros(List<Membro> membros) {
+    public void setMembros(List<Mebros> membros) {
         this.membros = membros;
     }
 }

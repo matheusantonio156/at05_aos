@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.gestao_projetos.dto.RequisicaoFormMebros;
 import com.example.gestao_projetos.entity.Mebros;
 import com.example.gestao_projetos.entity.StatusMebros;
-import com.example.gestao_projetos.respository.MebrosRepository;
+import com.example.gestao_projetos.repository.MebrosRepository;
 
 import jakarta.validation.Valid;
 
